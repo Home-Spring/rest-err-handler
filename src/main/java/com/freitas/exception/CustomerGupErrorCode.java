@@ -4,7 +4,7 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum ErrorCodeCustomerEnum implements ErrorCodeEnum {
+public enum CustomerGupErrorCode implements ErrorCode {
 	UNKNOWN_ERROR(1, "UNKNOWN_ERROR", "customer.error.unknown"),
 	INVALID_PARAMS(2, "INVALID_PARAMS", "customer.error.params.invalid"),
 	NOT_FOUND(3, "NOT_FOUND", "customer.error.entity.notfound"),
@@ -12,18 +12,18 @@ public enum ErrorCodeCustomerEnum implements ErrorCodeEnum {
     ;
 	
 	// lookup table to be used to find enum for conversion
-	private static final Map<Integer,ErrorCodeCustomerEnum> lookup = new HashMap<Integer,ErrorCodeCustomerEnum>();
+	private static final Map<Integer,CustomerGupErrorCode> lookup = new HashMap<Integer,CustomerGupErrorCode>();
 	static {
-		for(ErrorCodeCustomerEnum e : EnumSet.allOf(ErrorCodeCustomerEnum.class))
+		for(CustomerGupErrorCode e : EnumSet.allOf(CustomerGupErrorCode.class))
 			lookup.put(e.getErrorCode(), e);
 	}
 	
-	private static ServiceEnum serviceEnum = ServiceEnum.CUSTOMER_SERVICE;
+	private static Service serviceEnum = Service.CUSTOMER_SERVICE;
 	private int  errorCode;
 	private String    name;
 	private String i18nKey;
 	
-	ErrorCodeCustomerEnum(int errorCode, String name, String i18nKey) {
+	CustomerGupErrorCode(int errorCode, String name, String i18nKey) {
 		this.errorCode = errorCode;
 		this.name      = name;
 		this.i18nKey   = i18nKey;
@@ -60,7 +60,7 @@ public enum ErrorCodeCustomerEnum implements ErrorCodeEnum {
 		}
 	}
 	
-	public static ErrorCodeCustomerEnum get(int errorCode) { 
+	public static CustomerGupErrorCode get(int errorCode) {
 		return lookup.get(errorCode); 
 	}
 

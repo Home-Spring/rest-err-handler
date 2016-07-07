@@ -7,7 +7,7 @@ public class BaseException extends RuntimeException {
 	private static final long serialVersionUID = -8961905267911341174L;
 	
 	protected String                  message;
-	protected ErrorCodeEnum         errorCode;
+	protected ErrorCode errorCode;
 	protected String             debugMessage;
 	protected Map<String, String> messageArgs = new HashMap<String, String>();
 	
@@ -18,10 +18,10 @@ public class BaseException extends RuntimeException {
 		this.message = message;
 	}
 	
-	public ErrorCodeEnum getErrorCode() {
+	public ErrorCode getErrorCode() {
 		return errorCode;
 	}
-	public void setErrorCode(ErrorCodeEnum errorCode) {
+	public void setErrorCode(ErrorCode errorCode) {
 		this.errorCode = errorCode;
 	}
 

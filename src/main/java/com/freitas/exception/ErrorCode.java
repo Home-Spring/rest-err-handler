@@ -1,6 +1,6 @@
 package com.freitas.exception;
 
-public interface ErrorCodeEnum {
+public interface ErrorCode {
 
 	int getErrorCode();
 	String getName();

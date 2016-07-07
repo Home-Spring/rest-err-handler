@@ -2,21 +2,21 @@ package com.freitas.exception;
 
 import java.util.Map;
 
-public class CustomerException extends BaseException {
+public class CustomerGupException extends BaseException {
 	private static final long serialVersionUID = 8823356956725033191L;
 
-	public CustomerException(ErrorCodeEnum errorCode) {
+	public CustomerGupException(ErrorCode errorCode) {
 		super();
 		this.setErrorCode(errorCode);
 	}
 	
-	public CustomerException(ErrorCodeEnum errorCode, String debugMessage) {
+	public CustomerGupException(ErrorCode errorCode, String debugMessage) {
 		super();
 		this.setErrorCode(errorCode);
 		this.setDebugMessage(debugMessage);
 	}
 	
-	public CustomerException(ErrorCodeEnum errorCode, String debugMessage, Map<String, String> messageArgs) {
+	public CustomerGupException(ErrorCode errorCode, String debugMessage, Map<String, String> messageArgs) {
 		super();
 		this.setErrorCode(errorCode);
 		this.setDebugMessage(debugMessage);

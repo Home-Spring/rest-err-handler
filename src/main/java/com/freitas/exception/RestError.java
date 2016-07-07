@@ -46,6 +46,6 @@ public class RestError {
 	}
 	
 	public BaseException transformRestError() {
-		return ServiceEnum.createServiceException(this);
+		return Service.createServiceException(this);
 	}
 }

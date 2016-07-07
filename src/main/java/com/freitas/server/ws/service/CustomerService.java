@@ -1,12 +1,12 @@
 package com.freitas.server.ws.service;
 
-import com.freitas.exception.CustomerException;
-import com.freitas.model.Customer;
+import com.freitas.exception.CustomerGupException;
+import com.freitas.model.RestCustomer;
 
 public interface CustomerService {
 	
-	Customer saveCustomer(Customer customer);
-	Customer getCustomerByName(String name) throws CustomerException;
-	boolean deleteCustomerByName(String name) throws CustomerException;
+	RestCustomer saveCustomer(RestCustomer customer);
+	RestCustomer getCustomerByName(String name) throws CustomerGupException;
+	boolean deleteCustomerByName(String name) throws CustomerGupException;
 
 }

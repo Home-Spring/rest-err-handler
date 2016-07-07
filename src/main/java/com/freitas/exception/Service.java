@@ -1,13 +1,13 @@
 package com.freitas.exception;
 
-public enum ServiceEnum {
-	CUSTOMER_SERVICE(1, "ErrorCodeCustomerEnum"),
+public enum Service {
+	CUSTOMER_SERVICE(1, "CustomerGupErrorCode"),
 	;
 	
 	private int          serviceId;
 	private String serviceEnumName;
 
-	ServiceEnum(int serviceId, String serviceEnumName) {
+	Service(int serviceId, String serviceEnumName) {
 		this.serviceId       = serviceId;
 		this.serviceEnumName = serviceEnumName;
 	}
@@ -23,8 +23,8 @@ public enum ServiceEnum {
 	static public BaseException createServiceException(RestError restError) {
 		switch (restError.getServiceId()){
 		case 1:
-			ErrorCodeEnum errorCodeEnum = ErrorCodeCustomerEnum.get(restError.getErrorCode());
-			return new CustomerException(errorCodeEnum, restError.getDebugMessage(), restError.getMessageArgs());
+			ErrorCode errorCodeEnum = CustomerGupErrorCode.get(restError.getErrorCode());
+			return new CustomerGupException(errorCodeEnum, restError.getDebugMessage(), restError.getMessageArgs());
 		default:
 			return null;
 		}

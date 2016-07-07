@@ -2,7 +2,7 @@ package com.freitas.server.ws;
 
 import com.freitas.exception.BaseException;
 import com.freitas.exception.RestError;
-import com.freitas.model.Customer;
+import com.freitas.model.RestCustomer;
 import com.freitas.server.ws.service.CustomerService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,8 @@ public class APIController {
 	private CustomerService customerService;
 	
 	@RequestMapping(value="/customer", method = RequestMethod.POST)
-	public @ResponseBody Customer saveCustomer(@RequestBody Customer customer) {
+	public @ResponseBody
+    RestCustomer saveCustomer(@RequestBody RestCustomer customer) {
 		log.debug("Enter saveCustomer in TestMgmtController with " + customer.getName());
 		
 		validator.validateCustomer(customer);
@@ -29,7 +30,8 @@ public class APIController {
 	}
 
     @RequestMapping(value="/customer", method = RequestMethod.GET)
-	public @ResponseBody Customer getCustomerByName(@RequestParam("name") String name) {
+	public @ResponseBody
+    RestCustomer getCustomerByName(@RequestParam("name") String name) {
 		log.debug("Enter getCustomerByName in MainController with " + name);
 		
 		validator.validateString(name, "Name");

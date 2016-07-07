@@ -1,12 +1,12 @@
 package com.freitas.model;
 
-public class Customer {
+public class RestCustomer {
 	private Long     id;
 	private String name;
 	
-	public Customer() {}
+	public RestCustomer() {}
 	
-	public Customer(Long id, String name) {
+	public RestCustomer(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}

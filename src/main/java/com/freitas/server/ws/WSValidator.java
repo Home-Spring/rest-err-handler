@@ -1,28 +1,28 @@
 package com.freitas.server.ws;
 
-import com.freitas.exception.CustomerException;
-import com.freitas.exception.ErrorCodeCustomerEnum;
-import com.freitas.model.Customer;
+import com.freitas.exception.CustomerGupErrorCode;
+import com.freitas.exception.CustomerGupException;
+import com.freitas.model.RestCustomer;
 
 public class WSValidator {
 	public void validateString(String param, String paramName) {
 		if (param == null || param.isEmpty()) {
-			throw new CustomerException(ErrorCodeCustomerEnum.INVALID_PARAMS, paramName + " is required");
+			throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, paramName + " is required");
 		}
 	}
 
 	public void validateLong(Long param, String paramName) {
 		if (param == null || param.equals(0L)) {
-			throw new CustomerException(ErrorCodeCustomerEnum.INVALID_PARAMS, paramName + " is required");
+			throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, paramName + " is required");
 		}
 	}
 	
-	public void validateCustomer(Customer customer) {
+	public void validateCustomer(RestCustomer customer) {
 		if (customer == null) {
-			throw new CustomerException(ErrorCodeCustomerEnum.INVALID_PARAMS, "Customer is empty");
+			throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, "RestCustomer is empty");
 		}
 		if (customer.getName() == null || customer.getName().isEmpty()) {
-			throw new CustomerException(ErrorCodeCustomerEnum.INVALID_PARAMS, "Customer name is required");
+			throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, "RestCustomer name is required");
 		}
 	}
 }
