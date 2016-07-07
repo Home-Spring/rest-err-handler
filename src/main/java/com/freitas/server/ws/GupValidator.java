@@ -4,7 +4,7 @@ import com.freitas.exception.CustomerGupErrorCode;
 import com.freitas.exception.CustomerGupException;
 import com.freitas.model.RestCustomer;
 
-public class WSValidator {
+public class GupValidator {
 	public void validateString(String param, String paramName) {
 		if (param == null || param.isEmpty()) {
 			throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, paramName + " is required");

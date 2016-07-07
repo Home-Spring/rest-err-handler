@@ -3,7 +3,7 @@ package com.freitas.server.ws;
 import com.freitas.exception.BaseException;
 import com.freitas.exception.RestError;
 import com.freitas.model.RestCustomer;
-import com.freitas.server.ws.service.CustomerService;
+import com.freitas.server.ws.service.CustomerGupService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/ws")
-public class APIController {
-	private static Logger            log = Logger.getLogger(APIController.class);
-	private static WSValidator validator = new WSValidator();
+public class GupAPI {
+	private static Logger            log = Logger.getLogger(GupAPI.class);
+	private static GupValidator validator = new GupValidator();
 	
 	@Autowired
-	private CustomerService customerService;
+	private CustomerGupService customerService;
 	
 	@RequestMapping(value="/customer", method = RequestMethod.POST)
 	public @ResponseBody

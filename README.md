@@ -14,7 +14,7 @@ like:
 
 Note: The first time you attempt build the artifact with Maven, you will want to skip the tests with something like:
 
-    mvn package -Dmaven.test.skip=true
+    mvn clean package -Dmaven.test.skip=true
     
 There is a sample test case that will fail, unless you start the server.  
 

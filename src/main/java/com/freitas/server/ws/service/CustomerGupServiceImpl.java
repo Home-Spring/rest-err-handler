@@ -10,20 +10,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service("customerService")
-public class CustomerServiceImpl implements CustomerService {
-	private static Logger log = Logger.getLogger(CustomerServiceImpl.class);
+public class CustomerGupServiceImpl implements CustomerGupService {
+	private static Logger log = Logger.getLogger(CustomerGupServiceImpl.class);
 	
 	private Map<String,RestCustomer> customerMap = new HashMap<String,RestCustomer>();
 	private long                      lastId = 3;
 	
-	public CustomerServiceImpl() {
+	public CustomerGupServiceImpl() {
 		customerMap.put("bob", new RestCustomer(1L, "bob"));
 		customerMap.put("fred", new RestCustomer(2L, "fred"));
 		customerMap.put("sarah", new RestCustomer(3L, "sarah"));
 	}
 
 	public RestCustomer saveCustomer(RestCustomer customer) {
-		log.debug("Enter saveCustomer in CustomerServiceImpl with customer " + customer.getName());
+		log.debug("Enter saveCustomer in CustomerGupServiceImpl with customer " + customer.getName());
 		
 		lastId++;
 		
@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public RestCustomer getCustomerByName(String name) throws CustomerGupException {
-		log.debug("Enter getCustomerByName in CustomerServiceImpl with customer " + name);
+		log.debug("Enter getCustomerByName in CustomerGupServiceImpl with customer " + name);
 
 		RestCustomer customer = customerMap.get(name);
 		if (customer == null) {
