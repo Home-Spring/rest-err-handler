@@ -13,21 +13,18 @@
     <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
 	<bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter" />
 
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="order" value="1" />
 		<property name="messageConverters">
 			<list>
 				<ref bean="jsonHttpMessageConverter" />
 				<ref bean="stringHttpMessageConverter" />
-				<bean
-					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
 			</list>
 		</property>
 	</bean>
 
-	<bean id="annotationMethodHandlerExceptionResolver"
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver">
+	<bean id="annotationMethodHandlerExceptionResolver" class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver">
 		<property name="order" value="0" />
 		<property name="messageConverters">
 			<list>
@@ -36,5 +33,4 @@
 			</list>
 		</property>
 	</bean>
-
 </beans>

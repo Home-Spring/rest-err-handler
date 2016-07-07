@@ -38,7 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 		Customer customer = customerMap.get(name);
 		if (customer == null) {
-			String msg = " Customer not found with name: " + name;
+			String msg = "Customer not found with name: " + name;
 			log.error(ErrorCodeCustomerEnum.NOT_FOUND.getName() + msg);
 			throw new CustomerException(ErrorCodeCustomerEnum.NOT_FOUND, msg);
 		}
@@ -46,9 +46,8 @@ public class CustomerServiceImpl implements CustomerService {
 		return customer;
 	}
 
-
 	public boolean deleteCustomerByName(String name) throws CustomerException {
-		log.debug("Enter deleteCustomer in TestMgmtServiceImpl with name" + name);
+		log.debug("Enter deleteCustomer in TestMgmtServiceImpl with name " + name);
 		
 		Customer customer = getCustomerByName(name);
 		if (customer == null) {
@@ -59,5 +58,4 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		return true;
 	}
-
 }

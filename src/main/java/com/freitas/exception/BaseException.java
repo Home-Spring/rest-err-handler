@@ -4,12 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BaseException extends RuntimeException {
-	
 	private static final long serialVersionUID = -8961905267911341174L;
 	
-	protected String message;
-	protected ErrorCodeEnum errorCode;
-	protected String debugMessage;
+	protected String                  message;
+	protected ErrorCodeEnum         errorCode;
+	protected String             debugMessage;
 	protected Map<String, String> messageArgs = new HashMap<String, String>();
 	
 	public String getMessage(){
@@ -49,5 +48,4 @@ public class BaseException extends RuntimeException {
 		restError.setMessageArgs(messageArgs);
 		return restError;
 	}
-
 }

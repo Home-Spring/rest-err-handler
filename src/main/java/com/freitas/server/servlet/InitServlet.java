@@ -10,10 +10,9 @@ import org.apache.log4j.helpers.Loader;
 import org.apache.log4j.xml.DOMConfigurator;
 
 public class InitServlet extends HttpServlet {
-	
-	private static final long serialVersionUID = 199465984923187558L;
+	private static final long  serialVersionUID = 199465984923187558L;
 	private static String LOG4J_CONFIG_FILE_XML = "ws-log4j.xml";
-	private static Logger log = Logger.getLogger(InitServlet.class);
+	private static Logger                   log = Logger.getLogger(InitServlet.class);
 	
 	public void init(ServletConfig config) throws ServletException {
 		// load the log4j config
@@ -23,5 +22,4 @@ public class InitServlet extends HttpServlet {
 		
 		super.init(config);
 	}
-
 }

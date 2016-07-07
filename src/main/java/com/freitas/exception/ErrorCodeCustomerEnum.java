@@ -5,16 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum ErrorCodeCustomerEnum implements ErrorCodeEnum {
-	
-	
 	UNKNOWN_ERROR(1, "UNKNOWN_ERROR", "customer.error.unknown"),
 	INVALID_PARAMS(2, "INVALID_PARAMS", "customer.error.params.invalid"),
 	NOT_FOUND(3, "NOT_FOUND", "customer.error.entity.notfound"),
 	DUP_CUSTNAME(4, "DUP_CUSTNAME", "customer.error.entity.dup.cust"),
-	
-	//FIXME: add more here
-	
-	;
+    ;
 	
 	// lookup table to be used to find enum for conversion
 	private static final Map<Integer,ErrorCodeCustomerEnum> lookup = new HashMap<Integer,ErrorCodeCustomerEnum>();
@@ -24,14 +19,14 @@ public enum ErrorCodeCustomerEnum implements ErrorCodeEnum {
 	}
 	
 	private static ServiceEnum serviceEnum = ServiceEnum.CUSTOMER_SERVICE;
-	private int errorCode;
-	private String name;
+	private int  errorCode;
+	private String    name;
 	private String i18nKey;
 	
 	ErrorCodeCustomerEnum(int errorCode, String name, String i18nKey) {
 		this.errorCode = errorCode;
-		this.name = name;
-		this.i18nKey = i18nKey;
+		this.name      = name;
+		this.i18nKey   = i18nKey;
 	}
 	
 	public int getErrorCode() {
@@ -60,9 +55,6 @@ public enum ErrorCodeCustomerEnum implements ErrorCodeEnum {
 			return "Requested entity was not found";
 		case DUP_CUSTNAME:
 			return "Duplicate customer name used";
-		
-		//FIXME: add more here and can use resource bundle with i18nKey if desired 
-		
 		default: 
 			return "An undefined error has been encountered";
 		}

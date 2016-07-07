@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RestError {
-	private int httpStatus;
-	private int serviceId;
-	private int errorCode;
-	private String debugMessage;
+	private int                  httpStatus;
+	private int                   serviceId;
+	private int                   errorCode;
+	private String             debugMessage;
 	private Map<String, String> messageArgs = new HashMap<String, String>();
 	
 	public int getHttpStatus() {

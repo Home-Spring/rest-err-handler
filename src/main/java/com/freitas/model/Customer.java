@@ -1,7 +1,7 @@
 package com.freitas.model;
 
 public class Customer {
-	private Long id;
+	private Long     id;
 	private String name;
 	
 	public Customer() {}

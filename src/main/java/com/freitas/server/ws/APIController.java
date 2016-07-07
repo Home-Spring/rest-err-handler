@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/ws")
-public class MainController {
-	private static Logger            log = Logger.getLogger(MainController.class);
+public class APIController {
+	private static Logger            log = Logger.getLogger(APIController.class);
 	private static WSValidator validator = new WSValidator();
 	
 	@Autowired
@@ -47,7 +47,7 @@ public class MainController {
 	@ExceptionHandler(BaseException.class)
 	public @ResponseBody RestError handleCustomException (BaseException ex, HttpServletResponse response) {
 		response.setHeader("Content-Type", "application/json");
-        response.setStatus(HttpServletResponse.SC_BAD_REQUEST); //response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        return ex.transformException(HttpServletResponse.SC_BAD_REQUEST); //return ex.transformException(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+        return ex.transformException(HttpServletResponse.SC_BAD_REQUEST);
 	}
 }

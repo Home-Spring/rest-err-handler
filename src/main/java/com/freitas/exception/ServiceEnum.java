@@ -1,16 +1,14 @@
 package com.freitas.exception;
 
 public enum ServiceEnum {
-	
 	CUSTOMER_SERVICE(1, "ErrorCodeCustomerEnum"),
 	;
 	
-	private int serviceId;
+	private int          serviceId;
 	private String serviceEnumName;
-	
-	
+
 	ServiceEnum(int serviceId, String serviceEnumName) {
-		this.serviceId = serviceId;
+		this.serviceId       = serviceId;
 		this.serviceEnumName = serviceEnumName;
 	}
 	
@@ -26,15 +24,9 @@ public enum ServiceEnum {
 		switch (restError.getServiceId()){
 		case 1:
 			ErrorCodeEnum errorCodeEnum = ErrorCodeCustomerEnum.get(restError.getErrorCode());
-			return new CustomerException(errorCodeEnum, 
-					restError.getDebugMessage(), restError.getMessageArgs());
-
-		// FIXME: add other services here
-
+			return new CustomerException(errorCodeEnum, restError.getDebugMessage(), restError.getMessageArgs());
 		default:
 			return null;
 		}
-		
 	}
-
 }
