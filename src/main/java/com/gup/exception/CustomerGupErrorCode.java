@@ -1,24 +1,23 @@
-package com.freitas.exception;
+package com.gup.exception;
 
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
 public enum CustomerGupErrorCode implements ErrorCode {
-	UNKNOWN_ERROR(1, "UNKNOWN_ERROR", "customer.error.unknown"),
-	INVALID_PARAMS(2, "INVALID_PARAMS", "customer.error.params.invalid"),
-	NOT_FOUND(3, "NOT_FOUND", "customer.error.entity.notfound"),
-	DUP_CUSTNAME(4, "DUP_CUSTNAME", "customer.error.entity.dup.cust"),
+	UNKNOWN_ERROR(1, "UNKNOWN_ERROR", "customer error unknown"),
+	INVALID_PARAMS(2, "INVALID_PARAMS", "customer error params invalid"),
+	NOT_FOUND(3, "NOT_FOUND", "customer error entity notfound"),
+	DUP_CUSTNAME(4, "DUP_CUSTNAME", "customer error entity dup cust"),
     ;
-	
-	// lookup table to be used to find enum for conversion
+
 	private static final Map<Integer,CustomerGupErrorCode> lookup = new HashMap<Integer,CustomerGupErrorCode>();
 	static {
 		for(CustomerGupErrorCode e : EnumSet.allOf(CustomerGupErrorCode.class))
 			lookup.put(e.getErrorCode(), e);
 	}
 	
-	private static Service serviceEnum = Service.CUSTOMER_SERVICE;
+	private static Service service = Service.CUSTOMER_SERVICE;
 	private int  errorCode;
 	private String    name;
 	private String i18nKey;
@@ -28,23 +27,28 @@ public enum CustomerGupErrorCode implements ErrorCode {
 		this.name      = name;
 		this.i18nKey   = i18nKey;
 	}
-	
+
+    @Override
 	public int getErrorCode() {
 		return this.errorCode;
 	}
-	
+
+    @Override
 	public String getName() {
 		return this.name;
 	}
 
+    @Override
 	public int getServiceId() {
-		return serviceEnum.getServiceId();
+		return service.getServiceId();
 	}
 
+    @Override
 	public String getMessageKey() {
 		return i18nKey;
 	}
 
+    @Override
 	public String getDefaultMessage() {
 		switch (this){
 		case UNKNOWN_ERROR:
@@ -59,10 +63,8 @@ public enum CustomerGupErrorCode implements ErrorCode {
 			return "An undefined error has been encountered";
 		}
 	}
-	
+
 	public static CustomerGupErrorCode get(int errorCode) {
 		return lookup.get(errorCode); 
 	}
-
-
 }

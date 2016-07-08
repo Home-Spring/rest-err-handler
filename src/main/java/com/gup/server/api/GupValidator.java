@@ -1,8 +1,8 @@
-package com.freitas.server.ws;
+package com.gup.server.api;
 
-import com.freitas.exception.CustomerGupErrorCode;
-import com.freitas.exception.CustomerGupException;
-import com.freitas.model.RestCustomer;
+import com.gup.exception.CustomerGupErrorCode;
+import com.gup.exception.CustomerGupException;
+import com.gup.model.RestCustomer;
 
 public class GupValidator {
 	public void validateString(String param, String paramName) {

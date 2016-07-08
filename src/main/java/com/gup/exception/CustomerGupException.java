@@ -1,4 +1,4 @@
-package com.freitas.exception;
+package com.gup.exception;
 
 import java.util.Map;
 

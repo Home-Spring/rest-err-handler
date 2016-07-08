@@ -1,20 +1,20 @@
-package com.freitas.server.ws.service;
+package com.gup.server.api.service;
 
-import com.freitas.exception.CustomerGupErrorCode;
-import com.freitas.exception.CustomerGupException;
-import com.freitas.model.RestCustomer;
+import com.gup.exception.CustomerGupErrorCode;
+import com.gup.exception.CustomerGupException;
+import com.gup.model.RestCustomer;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@Service("customerService")
+@Service("CustomerGup")
 public class CustomerGupServiceImpl implements CustomerGupService {
 	private static Logger log = Logger.getLogger(CustomerGupServiceImpl.class);
 	
 	private Map<String,RestCustomer> customerMap = new HashMap<String,RestCustomer>();
-	private long                      lastId = 3;
+	private long                          lastId = 3;
 	
 	public CustomerGupServiceImpl() {
 		customerMap.put("bob", new RestCustomer(1L, "bob"));
@@ -22,6 +22,7 @@ public class CustomerGupServiceImpl implements CustomerGupService {
 		customerMap.put("sarah", new RestCustomer(3L, "sarah"));
 	}
 
+    @Override
 	public RestCustomer saveCustomer(RestCustomer customer) {
 		log.debug("Enter saveCustomer in CustomerGupServiceImpl with customer " + customer.getName());
 		
@@ -33,6 +34,7 @@ public class CustomerGupServiceImpl implements CustomerGupService {
 		return customer;
 	}
 
+    @Override
 	public RestCustomer getCustomerByName(String name) throws CustomerGupException {
 		log.debug("Enter getCustomerByName in CustomerGupServiceImpl with customer " + name);
 
@@ -46,6 +48,7 @@ public class CustomerGupServiceImpl implements CustomerGupService {
 		return customer;
 	}
 
+    @Override
 	public boolean deleteCustomerByName(String name) throws CustomerGupException {
 		log.debug("Enter deleteCustomer in TestMgmtServiceImpl with name " + name);
 		

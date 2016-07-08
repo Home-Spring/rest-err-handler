@@ -1,4 +1,4 @@
-package com.freitas.model;
+package com.gup.model;
 
 public class RestCustomer {
 	private Long     id;
@@ -17,6 +17,7 @@ public class RestCustomer {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}

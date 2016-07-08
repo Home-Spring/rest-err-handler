@@ -24,7 +24,7 @@
 		<appender-ref ref="Suite" />
 	</appender>
 
-	<logger name="com.freitas">
+	<logger name="com.gup">
 		<level value="DEBUG" />
 	</logger>
 

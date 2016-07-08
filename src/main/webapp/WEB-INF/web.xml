@@ -5,7 +5,7 @@
 
 	<servlet>
 		<servlet-name>InitServlet</servlet-name>
-		<servlet-class>com.freitas.server.servlet.InitServlet</servlet-class>
+		<servlet-class>com.gup.server.servlet.App</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 

@@ -1,4 +1,4 @@
-package com.freitas.exception;
+package com.gup.exception;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,10 +7,11 @@ public class BaseException extends RuntimeException {
 	private static final long serialVersionUID = -8961905267911341174L;
 	
 	protected String                  message;
-	protected ErrorCode errorCode;
+	protected ErrorCode             errorCode;
 	protected String             debugMessage;
 	protected Map<String, String> messageArgs = new HashMap<String, String>();
-	
+
+    @Override
 	public String getMessage(){
 		return this.message;
 	}
@@ -41,11 +42,13 @@ public class BaseException extends RuntimeException {
 
 	public RestError transformException(int httpStatus) {
 		RestError restError = new RestError();
-		restError.setHttpStatus(httpStatus);
-		restError.setServiceId(errorCode.getServiceId());
-		restError.setErrorCode(errorCode.getErrorCode());
-		restError.setDebugMessage(debugMessage);
-		restError.setMessageArgs(messageArgs);
+
+		restError.setHttpStatus( httpStatus );
+		restError.setServiceId( errorCode.getServiceId() );
+		restError.setErrorCode( errorCode.getErrorCode() );
+		restError.setDebugMessage( debugMessage );
+		restError.setMessageArgs( messageArgs );
+
 		return restError;
 	}
 }
