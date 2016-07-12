@@ -1,9 +1,9 @@
-package com.gup.server.api;
+package ua.com.itproekt.gup.server.api;
 
-import com.gup.exception.BaseException;
-import com.gup.exception.RestError;
-import com.gup.model.RestCustomer;
-import com.gup.server.api.service.CustomerGupService;
+import ua.com.itproekt.gup.exception.BaseException;
+import ua.com.itproekt.gup.exception.RestError;
+import ua.com.itproekt.gup.model.RestCustomer;
+import ua.com.itproekt.gup.server.api.service.CustomerGupService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,7 +47,8 @@ public class RestAPI {
 	}
 
 	@ExceptionHandler(BaseException.class)
-	public @ResponseBody RestError handleCustomException (BaseException ex, HttpServletResponse response) {
+	public @ResponseBody
+    RestError handleCustomException (BaseException ex, HttpServletResponse response) {
 		response.setHeader("Content-Type", "application/json");
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         return ex.transformException(HttpServletResponse.SC_BAD_REQUEST);

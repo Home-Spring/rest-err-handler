@@ -1,4 +1,4 @@
-package com.gup.server.servlet;
+package ua.com.itproekt.gup.server.servlet;
 
 import java.net.URL;
 import javax.servlet.ServletConfig;

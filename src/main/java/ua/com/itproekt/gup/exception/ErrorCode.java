@@ -1,4 +1,4 @@
-package com.gup.exception;
+package ua.com.itproekt.gup.exception;
 
 public interface ErrorCode {
 

@@ -1,8 +1,8 @@
-package com.gup.server.api.service;
+package ua.com.itproekt.gup.server.api.service;
 
-import com.gup.exception.CustomerGupErrorCode;
-import com.gup.exception.CustomerGupException;
-import com.gup.model.RestCustomer;
+import ua.com.itproekt.gup.exception.CustomerGupErrorCode;
+import ua.com.itproekt.gup.exception.CustomerGupException;
+import ua.com.itproekt.gup.model.RestCustomer;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 

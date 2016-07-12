@@ -2,11 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.freitas</groupId>
-	<artifactId>rest-err-handler</artifactId>
+
+	<groupId>ua.com.itproekt</groupId>
+	<artifactId>GUP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<packaging>war</packaging>
-	<name>rest-err-handler</name>
+
+	<name>REST Err Handler</name>
 	<description>Advanced Error Handling for REST based web service</description>
 
 	<properties>
@@ -16,7 +19,6 @@
 	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -90,13 +92,11 @@
 			<version>4.9</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>

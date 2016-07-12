@@ -1,4 +1,4 @@
-package com.gup.model;
+package ua.com.itproekt.gup.model;
 
 public class RestCustomer {
 	private Long     id;
@@ -24,4 +24,12 @@ public class RestCustomer {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+    @Override
+    public String toString() {
+        return "RestCustomer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
