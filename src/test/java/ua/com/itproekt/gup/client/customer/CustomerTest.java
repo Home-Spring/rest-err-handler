@@ -6,17 +6,15 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import ua.com.itproekt.gup.client.BaseTestCase;
-import ua.com.itproekt.gup.exception.BaseException;
-import ua.com.itproekt.gup.exception.CustomerGupErrorCode;
 import ua.com.itproekt.gup.model.RestCustomer;
 
 public class CustomerTest extends BaseTestCase {
 
-    private CustomerClient wsClient;
+    private CustomerGupClient wsClient;
     private String         custName = "bob";
 
     @Autowired
-    public void setClientService(CustomerClient wsClient) {
+    public void setClientService(CustomerGupClient wsClient) {
         this.wsClient = wsClient;
     }
 
