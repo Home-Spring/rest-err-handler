@@ -11,7 +11,7 @@ import org.springframework.util.Assert;
 
 @Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:test-ws-client.xml"})
+@ContextConfiguration(locations={"classpath:client.xml"})
 public class BaseTestCase extends Assert implements ApplicationContextAware {
 
     protected ApplicationContext applicationContext;

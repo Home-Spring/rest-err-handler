@@ -11,7 +11,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 public class App extends HttpServlet {
 	private static final long  serialVersionUID = 199465984923187558L;
-	private static String LOG4J_CONFIG_FILE_XML = "ws-log4j.xml";
+	private static String LOG4J_CONFIG_FILE_XML = "log4j.xml";
 	private static Logger                   log = Logger.getLogger(App.class);
 	
 	public void init(ServletConfig config) throws ServletException {

@@ -12,7 +12,7 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:test-ws-client.properties</value>
+                <value>classpath:client.properties</value>
             </list>
         </property>
     </bean>
