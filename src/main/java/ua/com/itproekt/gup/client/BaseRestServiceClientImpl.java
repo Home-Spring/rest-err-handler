@@ -3,7 +3,7 @@ package ua.com.itproekt.gup.client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
-public class BaseWebServiceClientImpl implements BaseWebServiceClient {
+public class BaseRestServiceClientImpl implements BaseRestServiceClient {
 
     protected RestTemplate restTemplate;
     private String serviceUrl;
@@ -18,11 +18,11 @@ public class BaseWebServiceClientImpl implements BaseWebServiceClient {
     }
 
 
-    public BaseWebServiceClientImpl() { }
+    public BaseRestServiceClientImpl() { }
 
-    public BaseWebServiceClientImpl(RestTemplate restTemplate) {
+    public BaseRestServiceClientImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
-        MyResponseErrorHandler errorHandler = new MyResponseErrorHandler();
+        GupResponseErrorHandler errorHandler = new GupResponseErrorHandler();
         restTemplate.setErrorHandler(errorHandler);
     }
 
@@ -30,7 +30,7 @@ public class BaseWebServiceClientImpl implements BaseWebServiceClient {
     @Autowired
     public void setRestTemplate(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
-        MyResponseErrorHandler errorHandler = new MyResponseErrorHandler();
+        GupResponseErrorHandler errorHandler = new GupResponseErrorHandler();
         restTemplate.setErrorHandler(errorHandler);
     }
 

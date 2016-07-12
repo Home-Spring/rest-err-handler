@@ -10,23 +10,23 @@ import ua.com.itproekt.gup.model.RestCustomer;
 
 public class CustomerTest extends BaseTestCase {
 
-    private CustomerGupClient wsClient;
-    private String         custName = "bob";
+    private CustomerGupClient restClient;
+    private String                  name = "bob";
 
     @Autowired
     public void setClientService(CustomerGupClient wsClient) {
-        this.wsClient = wsClient;
+        this.restClient = wsClient;
     }
 
     @Test
-    public void testGetCustomerByName() {
-        RestCustomer customer = wsClient.getCustomerByName(custName);
+    public void testGetCustomerGupByName() {
+        RestCustomer customer = restClient.getCustomerByName(name);
 
-        assertNotNull("#1.....", customer);
-        System.err.println("#1....." + customer.toString());
+        assertNotNull("Is not NULL", customer);
+//        System.err.println("#1....." + customer.toString());
 
-        assertEquals("#2.....", custName, customer.getName());
-        System.err.println("#2....." + customer.getName());
+        assertEquals("Is found a name", name, customer.getName());
+//        System.err.println("#2....." + customer.getName());
 //        try {
 //            customer = wsClient.getCustomerByName(custName);
 //            fail("Expected an exception here");

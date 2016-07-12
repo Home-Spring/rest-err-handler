@@ -13,20 +13,20 @@ import java.io.IOException;
 import java.util.List;
 
 @SuppressWarnings("rawtypes")
-public class MyResponseExtractor implements ResponseExtractor<Response> {
+public class GupResponseExtractor implements ResponseExtractor<Response> {
     private final Class<?>                           responseType;
     private final List<HttpMessageConverter<?>> messageConverters;
     private HttpMessageConverter                  stringConverter;
     private boolean                                      passThru = false;
 
-    public MyResponseExtractor(Class<?> responseType, List<HttpMessageConverter<?>> messageConverters) {
+    public GupResponseExtractor(Class<?> responseType, List<HttpMessageConverter<?>> messageConverters) {
         Assert.notNull(responseType, "'responseType' must not be null");
         Assert.notEmpty(messageConverters, "'messageConverters' must not be empty");
         this.responseType      = responseType;
         this.messageConverters = messageConverters;
     }
 
-    public MyResponseExtractor(Class<?> responseType, List<HttpMessageConverter<?>> messageConverters, boolean passThru) {
+    public GupResponseExtractor(Class<?> responseType, List<HttpMessageConverter<?>> messageConverters, boolean passThru) {
         Assert.notNull(responseType, "'responseType' must not be null");
         Assert.notEmpty(messageConverters, "'messageConverters' must not be empty");
         this.responseType      = responseType;

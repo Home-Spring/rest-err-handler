@@ -29,7 +29,7 @@
         </property>
     </bean>
 
-    <bean id="customerClient" class="ua.com.itproekt.gup.client.customer.CustomerClientImpl">
+    <bean id="customerClient" class="ua.com.itproekt.gup.client.customer.CustomerGupClientImpl">
         <property name="serviceUrl" value="${test.base.url}" />
     </bean>
 </beans>

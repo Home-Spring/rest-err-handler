@@ -11,20 +11,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class MyRequestCallback implements RequestCallback {
+public class GupRequestCallback implements RequestCallback {
     private List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
     private Map<String, String>                 headerAttrs;
     private Object                              requestBody;
 
-    public MyRequestCallback() { }
+    public GupRequestCallback() { }
 
-    public MyRequestCallback(Map<String, String> headerAttrs) {
+    public GupRequestCallback(Map<String, String> headerAttrs) {
         this.headerAttrs = headerAttrs;
         this.requestBody = null;
     }
 
-    public MyRequestCallback(Map<String, String> headerAttrs, Object requestBody,
-                             List<HttpMessageConverter<?>> messageConverters) {
+    public GupRequestCallback(Map<String, String> headerAttrs, Object requestBody,
+                              List<HttpMessageConverter<?>> messageConverters) {
         this.headerAttrs = headerAttrs;
         this.requestBody = requestBody;
         this.messageConverters = messageConverters;
