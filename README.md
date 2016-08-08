@@ -2,13 +2,14 @@
 
 * `advanced-error-handling-rest-based-web-service`:  [lopakalogic.com/articles/web-services-articles/advanced-error-handling-rest-based-web-service](http://www.lopakalogic.com/articles/web-services-articles/advanced-error-handling-rest-based-web-service/) **[github.com](https://github.com/bobfreitas/rest-err-handler)**
 * `mvn clean package -Dmaven.test.skip=true`
+* `api.war`: Задеплоить билд на сервер приложения; Запустить сервер приложения; После того как веб-приложение равзвернется ( **api/** ) нужно удалить варник билда ( **api.war** )
 
-> GET [/api/oauth?name=bob](http://localhost:8080/api/oauth?name=bob)
-> GET [/api/oauth](http://localhost:8080/api/oauth)
-> POST [/api/oauth?name=bobeeeeeee](http://localhost:8080/api/oauth) {"name":"bob"}
-> GET [/api/oauth?name=bobeeeeeee](http://localhost:8080/api/oauth?name=bobeeeeeee)
-> GET [/api/oauth?nameeeee=bob](http://localhost:8080/api/oauth?nameeeee=bob)
-> GET [/api/oauth?name=](http://localhost:8080/api/oauth?name=)
+> GET [/api/oauth?name=bob](http://localhost:8082/api/oauth?name=bob)
+> GET [/api/oauth](http://localhost:8082/api/oauth)
+> POST [/api/oauth?name=bobeeeeeee](http://localhost:8082/api/oauth) {"name":"bob"}
+> GET [/api/oauth?name=bobeeeeeee](http://localhost:8082/api/oauth?name=bobeeeeeee)
+> GET [/api/oauth?nameeeee=bob](http://localhost:8082/api/oauth?nameeeee=bob)
+> GET [/api/oauth?name=](http://localhost:8082/api/oauth?name=)
 
 > { "name":"bob", "id":1 }
 > { "name":"bob" ,"id":null }
