@@ -2,7 +2,7 @@
 
 * `advanced-error-handling-rest-based-web-service`:  [lopakalogic.com/articles/web-services-articles/advanced-error-handling-rest-based-web-service](http://www.lopakalogic.com/articles/web-services-articles/advanced-error-handling-rest-based-web-service/) **[github.com](https://github.com/bobfreitas/rest-err-handler)**
 * `mvn clean package -Dmaven.test.skip=true`
-* `api.war`: Задеплоить билд на сервер приложения; Запустить сервер приложения; После того как веб-приложение равзвернется ( **api/** ) нужно удалить варник билда ( **api.war** )
+* `api.war`: Задеплоить билд в корень ( **ROOT.war** - **/** ) на сервер приложения; Запустить сервер приложения;
 
 > GET [/api/oauth?name=bob](http://localhost:8082/api/oauth?name=bob)
 > GET [/api/oauth](http://localhost:8082/api/oauth)

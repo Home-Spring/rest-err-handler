@@ -21,8 +21,7 @@ public class RestAPI {
 	private CustomerGupService customerService;
 	
 	@RequestMapping(value="/oauth", method = RequestMethod.POST)
-	public @ResponseBody
-    RestCustomer saveCustomer(@RequestBody RestCustomer customer) {
+	public @ResponseBody RestCustomer saveCustomer(@RequestBody RestCustomer customer) {
 		log.debug("Enter saveCustomer in TestMgmtController with " + customer.getName());
 		
 		validator.validateCustomer(customer);
@@ -30,10 +29,9 @@ public class RestAPI {
 	}
 
     @RequestMapping(value="/oauth", method = RequestMethod.GET)
-	public @ResponseBody
-    RestCustomer getCustomerByName(@RequestParam("name") String name) {
+	public @ResponseBody RestCustomer getCustomerByName(@RequestParam("name") String name) {
 		log.debug("Enter getCustomerByName in MainController with " + name);
-		
+
 		validator.validateString(name, "Name");
 		return customerService.getCustomerByName(name);
 	}
@@ -47,8 +45,7 @@ public class RestAPI {
 	}
 
 	@ExceptionHandler(BaseException.class)
-	public @ResponseBody
-    RestError handleCustomException (BaseException ex, HttpServletResponse response) {
+	public @ResponseBody RestError handleCustomException (BaseException ex, HttpServletResponse response) {
 		response.setHeader("Content-Type", "application/json");
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         return ex.transformException(HttpServletResponse.SC_BAD_REQUEST);
