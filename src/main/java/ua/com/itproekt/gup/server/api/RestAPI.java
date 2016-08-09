@@ -10,12 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/api")
 public class RestAPI {
 	private static Logger             log = Logger.getLogger(RestAPI.class);
 	private static GupValidator validator = new GupValidator();
+
+    private int MY_STATUS = 200;
 	
 	@Autowired
 	private CustomerGupService customerService;
@@ -29,11 +32,12 @@ public class RestAPI {
 	}
 
     @RequestMapping(value="/oauth", method = RequestMethod.GET)
-	public @ResponseBody RestCustomer getCustomerByName(@RequestParam("name") String name) {
+//	public @ResponseBody RestCustomer getCustomerByName(@RequestParam("name") String name) {
+    public @ResponseBody RestCustomer getCustomerByName(@RequestParam(value = "name", required = false) String name) {
 		log.debug("Enter getCustomerByName in MainController with " + name);
 
 		validator.validateString(name, "Name");
-		return customerService.getCustomerByName(name);
+        return customerService.getCustomerByName(name);
 	}
 
 	@RequestMapping(value="/oauth/{name}", method = RequestMethod.DELETE)
@@ -46,9 +50,11 @@ public class RestAPI {
 
 	@ExceptionHandler(BaseException.class)
 	public @ResponseBody RestError handleCustomException (BaseException ex, HttpServletResponse response) {
-		response.setHeader("Content-Type", "application/json");
-        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+//		response.setHeader("Content-Type", "application/json");
+//        response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         return ex.transformException(HttpServletResponse.SC_BAD_REQUEST);
+
+//        return ex.transformException(MY_STATUS);
 	}
 
 }

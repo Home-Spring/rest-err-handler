@@ -6,9 +6,15 @@ import ua.com.itproekt.gup.model.RestCustomer;
 
 public class GupValidator {
 	public void validateString(String param, String paramName) {
-		if (param == null || param.isEmpty()) {
-			throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, paramName + " is required");
-		}
+//		if (param == null || param.isEmpty()) {
+//			throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, paramName + " is required");
+//		}
+        if (param == null) {
+            throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, paramName + " is required");
+        }
+        if (param.isEmpty()) {
+            throw new CustomerGupException(CustomerGupErrorCode.INVALID_PARAMS, paramName + " is required");
+        }
 	}
 
 	public void validateLong(Long param, String paramName) {
